@@ -1,0 +1,53 @@
+<div class="container p-3">
+  <h2 class="my-3">
+    Listado de Productos:
+  </h2>
+
+  <% if(productos.length){ %>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">
+          #ID
+        </th>
+        <th scope="col">
+          Title
+        </th>
+        <th scope="col">
+          Price
+        </th>
+        <th scope="col">
+          Image
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const p of productos) { %>
+
+      <tr class="align-middle">
+        <th scope="row">
+          <%= p.id %>
+        </th>
+        <td>
+          <%= p.title %>
+        </td>
+        <td>
+          $<%= p.price %>
+        </td>
+        <td>
+          <img style="height: 4rem" class="mh-100" src="<%= p.thumbnail %>" alt="<%= p.title %>" />
+        </td>
+      </tr>
+      <% } %>
+
+    </tbody>
+  </table>
+
+  <% } else { %>
+
+  <h3>No hay productos creados aún</h3>
+
+  <% } %>
+
+</div>

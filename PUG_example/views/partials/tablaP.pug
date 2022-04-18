@@ -1,0 +1,31 @@
+.container.p-3
+    h2.my-3
+        | Listado de Productos:
+    
+    if productos.length 
+
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th(scope='col')
+                        | #ID
+                    th(scope='col')
+                        | Title
+                    th(scope='col')
+                        | Price
+                    th(scope='col')
+                        | Image
+            tbody
+                each p in productos
+                    tr.align-middle
+                        th(scope='row')
+                            =p.id
+                        td
+                            =p.title
+                        td
+                            ='$'+ p.price
+                        td
+                            img.mh-100(style='height: 4rem' src=p.thumbnail alt=p.title)
+    
+    else 
+        h3 Productos no creados aún

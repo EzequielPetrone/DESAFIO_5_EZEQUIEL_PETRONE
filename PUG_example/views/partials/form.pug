@@ -1,0 +1,21 @@
+.container.p-3
+  h2.my-3
+    | Alta de Producto:
+  form.p-2(action='/productos' method='POST')
+    .mb-3
+      label.form-label(for='productTitle')
+        | Nombre del Producto
+      input#productTitle.form-control(required='' type='text' name='productTitle')
+    .mb-3
+      label.form-label(for='productPrice')
+        | Precio
+      input#productPrice.form-control(required='' type='number' name='productPrice')
+    .mb-3
+      label.form-label(for='productImgUrl')
+        | URL de la imagen
+      input#productImgUrl.form-control(required='' type='url' name='productImgUrl')
+    button.btn.btn-primary(type='submit')
+      | Submit
+
+script.
+  if(#{cond}){alert('#{msj}')}

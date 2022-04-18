@@ -1,0 +1,10 @@
+<div class="container p-3">
+  <h2 class="my-3">
+    Listado de Productos:
+  </h2>
+  {{#if productos.length}}
+    {{> tablaP}}
+  {{else}}
+    <h3>No hay productos creados aún</h3>
+  {{/if}}
+</div>
